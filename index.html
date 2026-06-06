@@ -276,6 +276,46 @@
       box-shadow: none;
     }
 
+    .signed {
+      border: 1px solid rgba(111, 183, 233, 0.36);
+      border-radius: 8px;
+      background: rgba(21, 27, 33, 0.92);
+      padding: 16px;
+      margin-top: 14px;
+      box-shadow: none;
+    }
+
+    .signed h2 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .signed p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .signed-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .signed-item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.025);
+      padding: 12px;
+    }
+
+    .signed-item b {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
     .guide h2,
     .warning h2 {
       font-size: 18px;
@@ -332,7 +372,8 @@
 
     @media (max-width: 700px) {
       .summary,
-      .grid {
+      .grid,
+      .signed-grid {
         grid-template-columns: 1fr;
       }
 
@@ -417,6 +458,29 @@
         <li><span class="num">4</span><span>Nếu chỉ muốn lưu file về máy, dùng nút Tải file trong từng thẻ cấu hình.</span></li>
         <li><span class="num">5</span><span>Muốn đổi giữa JS Off và JS On thì gỡ profile cũ trước, sau đó cài bản mới.</span></li>
       </ol>
+    </section>
+
+    <section class="signed">
+      <h2>Bản đã ký</h2>
+      <p>Dùng nhóm này nếu bạn muốn cài hoặc tải file `.signed.mobileconfig`. iOS vẫn có thể hiện cảnh báo nếu chứng chỉ ký không phải CA tin cậy của Apple.</p>
+      <div class="signed-grid">
+        <div class="signed-item">
+          <b>UltimateMax V9 JS Off - Signed</b>
+          <div class="actions">
+            <a class="button primary" href="iOS-AllInOne-UltimateMax-V9-NonMDM.signed.mobileconfig">Cài bản đã ký</a>
+            <a class="button" href="iOS-AllInOne-UltimateMax-V9-NonMDM.signed.mobileconfig" download>Tải file đã ký</a>
+            <button type="button" data-copy="iOS-AllInOne-UltimateMax-V9-NonMDM.signed.mobileconfig">Sao chép tên file</button>
+          </div>
+        </div>
+        <div class="signed-item">
+          <b>UltimateMax V9 JS On - Signed</b>
+          <div class="actions">
+            <a class="button primary" href="iOS-AllInOne-UltimateMax-V9-JS-On-NonMDM.signed.mobileconfig">Cài bản đã ký</a>
+            <a class="button" href="iOS-AllInOne-UltimateMax-V9-JS-On-NonMDM.signed.mobileconfig" download>Tải file đã ký</a>
+            <button type="button" data-copy="iOS-AllInOne-UltimateMax-V9-JS-On-NonMDM.signed.mobileconfig">Sao chép tên file</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="warning">
