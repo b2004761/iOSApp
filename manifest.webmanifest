@@ -1,0 +1,9 @@
+{
+  "name": "UltimateMax V9",
+  "short_name": "UltimateMax",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f1419",
+  "theme_color": "#0f1419",
+  "description": "Trình chọn và cài profile iOS UltimateMax V9."
+}

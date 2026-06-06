@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+
+        <!-- PAYLOAD 1: ALL-IN-ONE ULTIMATEMAX V9 NON-MDM RESTRICTIONS -->
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.kai.allinone.ultimatemax.v9.nonmdm.restrictions</string>
+            <key>PayloadUUID</key>
+            <string>90768682-6E13-4B29-BA4F-3B84C571D4DE</string>
+            <key>PayloadDisplayName</key>
+            <string>UltimateMax V9 - All-in-One Ultra Restrictions</string>
+            <key>PayloadDescription</key>
+            <string>Combined best-of profile from Gaming Mode, Gaming Ultra, UltraMax V2/V3/V4, CoolMax V5, and ThermalMax V6. Uses the strictest non-MDM values for stability, lower heat, reduced background work, privacy, DNS consistency, and long-session gaming stability.</string>
+
+            <!-- AI / INTELLIGENCE: reduce on-device and cloud assistant workload -->
+            <key>allowAppleIntelligenceReport</key><false/>
+            <key>allowAssistant</key><false/>
+            <key>allowAssistantUserGeneratedContent</key><false/>
+            <key>allowAssistantWhileLocked</key><false/>
+            <key>allowExternalIntelligenceIntegrations</key><false/>
+            <key>allowExternalIntelligenceIntegrationsSignIn</key><false/>
+            <key>allowGenmoji</key><false/>
+            <key>allowImagePlayground</key><false/>
+            <key>allowImageWand</key><false/>
+            <key>allowWritingTools</key><false/>
+            <key>allowMailSmartReplies</key><false/>
+            <key>allowMailSummary</key><false/>
+            <key>allowSafariSummary</key><false/>
+            <key>allowNotesTranscription</key><false/>
+            <key>allowNotesTranscriptionSummary</key><false/>
+
+            <!-- CLOUD / SYNC: reduce upload, download, indexing, and background wakeups -->
+            <key>allowCloudBackup</key><false/>
+            <key>allowCloudDocumentSync</key><false/>
+            <key>allowCloudPhotoLibrary</key><false/>
+            <key>allowCloudPrivateRelay</key><false/>
+            <key>allowCloudKeychainSync</key><false/>
+            <key>allowManagedAppsCloudSync</key><false/>
+            <key>allowPhotoStream</key><false/>
+            <key>allowSharedStream</key><false/>
+            <key>allowGlobalBackgroundFetchWhenRoaming</key><false/>
+            <key>allowContentCaching</key><false/>
+
+            <!-- CONNECTIVITY: keep Wi-Fi usable while reducing discovery, continuity, and accessory wakeups -->
+            <key>allowAirDrop</key><false/>
+            <key>allowiPhoneMirroring</key><false/>
+            <key>allowiPhoneWidgetsOnMac</key><false/>
+            <key>allowHandoff</key><false/>
+            <key>allowActivityContinuation</key><false/>
+            <key>allowNearbyInteraction</key><false/>
+            <key>allowProximitySetupToNewDevice</key><false/>
+            <key>allowBluetoothModification</key><false/>
+            <key>allowPersonalHotspot</key><false/>
+            <key>allowAutoUnlock</key><false/>
+            <key>allowUSB</key><false/>
+            <key>allowUSBRestrictedMode</key><true/>
+            <key>allowPairing</key><false/>
+            <key>allowRemoteScreenObservation</key><false/>
+
+            <!-- PRIVACY / TELEMETRY: reduce diagnostics, tracking, and online search surfaces -->
+            <key>allowApplePersonalizedAdvertising</key><false/>
+            <key>allowDiagnosticSubmission</key><false/>
+            <key>allowDiagnosticSubmissionModification</key><false/>
+            <key>allowSpotlightInternetResults</key><false/>
+            <key>forceLimitAdTracking</key><true/>
+            <key>forceOnDeviceOnlyDictation</key><true/>
+
+            <!-- INPUT: reduce prediction, correction, dictation, lookup, and keyboard intelligence workload -->
+            <key>allowContinuousPathKeyboard</key><false/>
+            <key>allowDefinitionLookup</key><false/>
+            <key>allowDictation</key><false/>
+            <key>allowPredictiveKeyboard</key><false/>
+            <key>allowSpellCheck</key><false/>
+            <key>allowAutoCorrection</key><false/>
+            <key>allowAutoDim</key><true/>
+
+                        <!-- PRIVACY / ANALYTICS PLUS: imported from config-fix-lag-ios-main after cleanup -->
+            <key>allowAppTrackingTransparency</key><false/>
+            <key>allowAdTracking</key><false/>
+            <key>allowPersonalizedAds</key><false/>
+            <key>allowAnalytics</key><false/>
+            <key>allowAppAnalytics</key><false/>
+            <key>allowCrashReporting</key><false/>
+
+            <!-- LOCATION / MOTION PLUS: stricter background sensor reduction -->
+            <key>allowLocationServices</key><false/>
+            <key>allowMotionAndFitness</key><false/>
+            <key>allowNearbyDevices</key><false/>
+
+            <!-- SIRI / CONTINUITY PLUS -->
+            <key>allowSiri</key><false/>
+            <key>allowSiriSuggestions</key><false/>
+            <key>allowUniversalClipboard</key><false/>
+
+            <!-- LOCK SCREEN / WALLET SURFACE REDUCTION -->
+            <key>allowLockScreenNotificationsView</key><false/>
+            <key>allowLockScreenControlCenter</key><false/>
+            <key>allowLockScreenTodayView</key><false/>
+            <key>allowPassbookWhileLocked</key><false/>
+
+            <!-- AIRPLAY / WATCH / TRUST REDUCTION -->
+            <key>allowAirPlay</key><false/>
+            <key>allowAirPlayIncomingRequests</key><false/>
+            <key>allowPairedWatch</key><false/>
+            <key>allowEnterpriseAppTrust</key><false/>
+            <key>allowUntrustedTLSPrompt</key><false/>
+            <key>forceAirDropUnmanaged</key><true/>
+
+            <!-- SOFTWARE / APP UPDATE REDUCTION -->
+            <key>allowSoftwareUpdate</key><false/>
+            <key>allowOTAPKIUpdates</key><false/>
+            <key>allowAutomaticAppUpdates</key><false/>
+            <key>allowAppRating</key><false/>
+            <key>allowUnmanagedAppBackup</key><false/>
+
+            <!-- ICLOUD PLUS -->
+            <key>allowCloudDocuments</key><false/>
+            <key>allowCloudCustomDomains</key><false/>
+            <key>allowiCloudCalendar</key><false/>
+            <key>allowiCloudMail</key><false/>
+            <key>allowiCloudReminders</key><false/>
+            <key>allowSharedKeystores</key><false/>
+
+            <!-- ENTERPRISE BOOK / STORE PLUS -->
+            <key>allowEnterpriseBookBackup</key><false/>
+            <key>allowEnterpriseBookMetadataSync</key><false/>
+            <key>allowiTunes</key><false/>
+            <key>allowFindMyDeviceModification</key><false/>
+            <!-- APP / GAME / MEDIA SERVICES: strict mode for background reduction and thermal stability -->
+            <key>allowAppClips</key><false/>
+            <key>allowAutomaticAppDownloads</key><false/>
+            <key>allowBookstore</key><false/>
+            <key>allowBookstoreErotica</key><false/>
+            <key>allowGameCenter</key><false/>
+            <key>allowMultiplayerGaming</key><false/>
+            <key>allowMusicService</key><false/>
+            <key>allowNews</key><false/>
+            <key>allowPodcasts</key><false/>
+            <key>allowRadioService</key><false/>
+            <key>allowLiveVoicemail</key><false/>
+            <key>allowChat</key><false/>
+
+            <!-- DEVICE / ACCOUNT CHANGES: lock noisy configuration surfaces while profile is active -->
+            <key>allowAccountModification</key><false/>
+            <key>allowAppCellularDataModification</key><false/>
+            <key>allowAppInstallation</key><false/>
+            <key>allowAppRemoval</key><false/>
+            <key>allowCellularPlanModification</key><false/>
+            <key>allowDefaultBrowserModification</key><false/>
+            <key>allowDeviceNameModification</key><false/>
+            <key>allowFindMyDevice</key><false/>
+            <key>allowFindMyFriends</key><false/>
+            <key>allowManagedAppStorage</key><false/>
+            <key>allowOpenFromManagedToUnmanaged</key><false/>
+            <key>allowOpenFromUnmanagedToManaged</key><false/>
+            <key>allowPasscodeModification</key><false/>
+            <key>allowScreenRecording</key><false/>
+            <key>allowSystemAppRemoval</key><false/>
+            <key>allowUIAppInstallation</key><false/>
+            <key>allowVoiceDialing</key><false/>
+            <key>allowWallpaperModification</key><false/>
+            <key>allowAutomaticScreenSaver</key><false/>
+
+            <!-- PURCHASE / STORE REDUCTION -->
+            <key>allowInAppPurchases</key><false/>
+            <key>forceITunesStorePasswordEntry</key><true/>
+
+            <!-- SAFARI ULTRA THERMAL MODE: keep browser available but reduce CPU-heavy work -->
+            <key>allowSafari</key><true/>
+            <key>safariAllowAutoFill</key><false/>
+            <key>safariAllowJavaScript</key><false/>
+            <key>safariAllowPopups</key><false/>
+            <key>safariForceFraudWarning</key><true/>
+
+            <!-- FORCE SETTINGS -->
+            <key>forceAutomaticDateAndTime</key><true/>
+            <key>forceEncryptedBackup</key><true/>
+            <key>forceWiFiPowerOn</key><true/>
+            <key>forceWiFiAssist</key><false/>
+        </dict>
+
+        <!-- PAYLOAD 2: ENERGY SAVER COMPATIBILITY LAYER -->
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.MCX</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.kai.allinone.ultimatemax.v9.nonmdm.energy</string>
+            <key>PayloadUUID</key>
+            <string>2317F049-32BB-4098-871C-64814081423B</string>
+            <key>PayloadDisplayName</key>
+            <string>UltimateMax V9 - Energy Saver Compatibility</string>
+            <key>PayloadDescription</key>
+            <string>Compatibility energy saver layer retained from UltraMax, CoolMax, and ThermalMax profiles. iOS may ignore Mac-specific MCX keys, but keeping this payload preserves compatibility with earlier installable versions.</string>
+            <key>com.apple.EnergySaver.portable.ACPower</key>
+            <dict>
+                <key>Automatic Restart On Power Loss</key>
+                <false/>
+                <key>Display Sleep Timer</key>
+                <integer>2</integer>
+                <key>System Sleep Timer</key>
+                <integer>2</integer>
+                <key>Wake On LAN</key>
+                <false/>
+            </dict>
+        </dict>
+
+        <!-- PAYLOAD 3: ENCRYPTED DNS -->
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.dnsSettings.managed</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.kai.allinone.ultimatemax.v9.nonmdm.dns</string>
+            <key>PayloadUUID</key>
+            <string>B7DB6DF0-D3EA-4633-892D-DC91B9510CE8</string>
+            <key>PayloadDisplayName</key>
+            <string>UltimateMax V9 - Cloudflare DNS over HTTPS</string>
+            <key>PayloadDescription</key>
+            <string>Encrypted DNS over HTTPS through Cloudflare for consistent resolver behavior, reduced DNS leakage, and stable gaming/network sessions.</string>
+            <key>DNSSettings</key>
+            <dict>
+                <key>DNSProtocol</key>
+                <string>HTTPS</string>
+                <key>ServerName</key>
+                <string>cloudflare-dns.com</string>
+                <key>ServerURL</key>
+                <string>https://cloudflare-dns.com/dns-query</string>
+                <key>ServerAddresses</key>
+                <array>
+                    <string>1.1.1.1</string>
+                    <string>1.0.0.1</string>
+                    <string>2606:4700:4700::1111</string>
+                    <string>2606:4700:4700::1001</string>
+                </array>
+            </dict>
+        </dict>
+
+    </array>
+
+    <!-- PROFILE ROOT METADATA -->
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadIdentifier</key>
+    <string>com.kai.allinone.ultimatemax.v9.nonmdm.profile</string>
+    <key>PayloadUUID</key>
+    <string>DFED1626-A8F4-4E1F-8FBB-6E8D743815BC</string>
+    <key>PayloadDisplayName</key>
+    <string>iOS All-in-One UltimateMax V9 NonMDM</string>
+    <key>PayloadDescription</key>
+    <string>Best full combined non-MDM profile from all local mobileconfig versions, V7/V8 refinements, and cleaned config-fix-lag-ios-main additions. It cannot directly control CPU, GPU, RAM, battery, thermal controller, charging controller, refresh rate, game FPS, or modem firmware; it reduces load indirectly by limiting background services, cloud sync, telemetry, discovery radios, keyboard intelligence, store/media services, Safari scripts, app/account changes, and DNS leakage.</string>
+    <key>PayloadOrganization</key>
+    <string>Kai-iOS-AllInOne-UltimateMax-V9-NonMDM</string>
+    <key>PayloadRemovalDisallowed</key>
+    <false/>
+    <key>ConsentText</key>
+    <dict>
+        <key>default</key>
+        <string>UltimateMax V9 NonMDM combines the strongest useful settings from all local profiles, V7/V8 refinements, and cleaned config-fix-lag-ios-main additions into one installable profile for normal iPhones. It does not use MDM and does not require supervised mode. It cannot directly lower CPU temperature, boost FPS, change refresh rate, overclock hardware, or control firmware, but it can reduce heat and background load indirectly by limiting sync, AI helpers, telemetry, discovery radios, keyboard prediction, store/media services, Safari JavaScript, account/app changes, and DNS leakage. This is an aggressive profile: some features, including app install/removal, Game Center, multiplayer services, screen recording, iCloud sync, Siri, and Safari JavaScript, stay restricted until the profile is removed.</string>
+        <key>vi</key>
+        <string>UltimateMax V9 NonMDM tổng hợp các cài đặt mạnh và hữu ích nhất từ tất cả profile local, V7/V8 và phần đã lọc từ config-fix-lag-ios-main vào một profile cài được cho iPhone thường. Không dùng MDM và không cần supervised. Profile không thể hạ nhiệt CPU trực tiếp, tăng FPS, đổi tần số quét, ép xung phần cứng hay điều khiển firmware, nhưng có thể giảm nóng và tải nền gián tiếp bằng cách hạn chế đồng bộ, AI, telemetry, radio discovery, gợi ý bàn phím, dịch vụ store/media, JavaScript Safari, thay đổi tài khoản/app, vị trí, cảm biến chuyển động, AirPlay, Apple Watch, cập nhật nền, iCloud phụ và rò rỉ DNS. Đây là profile mạnh: một số tính năng như cài/gỡ app, Game Center, multiplayer service, quay màn hình, iCloud sync, Siri, vị trí và JavaScript Safari sẽ bị hạn chế cho đến khi gỡ profile.</string>
+    </dict>
+</dict>
+</plist>

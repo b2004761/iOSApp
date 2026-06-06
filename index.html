@@ -3,24 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#101418">
+  <meta name="theme-color" content="#0f1419">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="UltimateMax">
-  <title>UltimateMax Profile App</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>UltimateMax V9</title>
   <style>
     :root {
       color-scheme: dark;
-      --bg: #101418;
-      --panel: #171d23;
-      --panel-2: #1e2630;
-      --text: #eef3f7;
-      --muted: #a9b4bf;
-      --line: #2d3742;
-      --accent: #54c7a0;
-      --warn: #f0b45b;
-      --danger: #ee7b72;
-      --button: #26323d;
-      --button-strong: #2c7d67;
+      --bg: #0f1419;
+      --surface: #151b21;
+      --surface-2: #1c242c;
+      --surface-3: #222c35;
+      --text: #f3f7fa;
+      --muted: #aab6c1;
+      --soft: #d5dde4;
+      --line: #313c47;
+      --green: #4fc39a;
+      --green-2: #2f846b;
+      --amber: #e8b05b;
+      --red: #ef7d73;
+      --blue: #6fb7e9;
+      --shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
     }
 
     * {
@@ -31,89 +36,223 @@
       margin: 0;
       min-height: 100vh;
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0) 240px),
+        radial-gradient(circle at 20% 0%, rgba(79, 195, 154, 0.10), transparent 32rem),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 16rem),
         var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       letter-spacing: 0;
     }
 
     main {
-      width: min(760px, 100%);
+      width: min(860px, 100%);
       margin: 0 auto;
-      padding: 22px 16px 36px;
+      padding: max(18px, env(safe-area-inset-top)) 16px 36px;
     }
 
-    header {
-      padding: 12px 2px 20px;
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(79, 195, 154, 0.42);
+      border-radius: 8px;
+      background: #153027;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.1;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .server {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 32px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--soft);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(79, 195, 154, 0.14);
+    }
+
+    .hero {
+      padding: 20px 0 18px;
     }
 
     h1 {
-      margin: 0 0 8px;
-      font-size: 30px;
-      line-height: 1.08;
-      font-weight: 800;
-    }
-
-    .sub {
       margin: 0;
+      max-width: 720px;
+      font-size: clamp(30px, 8vw, 54px);
+      line-height: 1.02;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 690px;
+      margin: 12px 0 0;
       color: var(--muted);
-      font-size: 15px;
-      line-height: 1.45;
+      font-size: 16px;
+      line-height: 1.55;
     }
 
-    .status {
+    .summary {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 10px;
-      margin: 8px 0 18px;
+      margin: 18px 0 20px;
     }
 
-    .metric {
+    .summary div,
+    .card,
+    .guide,
+    .warning {
       border: 1px solid var(--line);
-      background: var(--panel);
       border-radius: 8px;
-      padding: 12px;
-      min-height: 72px;
+      background: rgba(21, 27, 33, 0.92);
+      box-shadow: var(--shadow);
     }
 
-    .metric b {
+    .summary div {
+      min-height: 80px;
+      padding: 13px;
+      box-shadow: none;
+    }
+
+    .summary b {
       display: block;
-      font-size: 13px;
       margin-bottom: 6px;
+      font-size: 13px;
     }
 
-    .metric span {
+    .summary span {
       color: var(--muted);
       font-size: 13px;
       line-height: 1.35;
     }
 
-    .profile {
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 16px;
+    }
+
+    .badge {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 4px 9px;
       border: 1px solid var(--line);
-      background: var(--panel);
-      border-radius: 8px;
-      padding: 14px;
-      margin: 12px 0;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.035);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 12px;
     }
 
-    .profile h2 {
-      margin: 0 0 6px;
-      font-size: 18px;
-      line-height: 1.2;
+    .cool {
+      color: var(--green);
     }
 
-    .profile p {
-      margin: 0 0 14px;
+    .compat {
+      color: var(--amber);
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .card p {
+      margin: 0;
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.45;
+      line-height: 1.5;
+    }
+
+    .features {
+      display: grid;
+      gap: 8px;
+      margin: 15px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      color: var(--soft);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .check {
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(79, 195, 154, 0.14);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
     }
 
     .actions {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 10px;
+      gap: 9px;
+      margin-top: auto;
     }
 
     a.button,
@@ -121,147 +260,205 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 8px;
       width: 100%;
-      min-height: 46px;
+      min-height: 48px;
       padding: 12px 14px;
-      border: 1px solid transparent;
+      border: 1px solid var(--line);
       border-radius: 8px;
-      background: var(--button);
+      background: var(--surface-3);
       color: var(--text);
       text-decoration: none;
       font: inherit;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
     }
 
     a.primary {
-      background: var(--button-strong);
+      border-color: rgba(79, 195, 154, 0.48);
+      background: var(--green-2);
     }
 
-    .note {
-      border: 1px solid var(--line);
-      background: var(--panel-2);
-      border-radius: 8px;
-      padding: 14px;
+    button:active,
+    a.button:active {
+      transform: translateY(1px);
+    }
+
+    .guide,
+    .warning {
+      padding: 16px;
       margin-top: 14px;
-      color: var(--muted);
+      box-shadow: none;
+    }
+
+    .guide h2,
+    .warning h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .steps li {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      align-items: start;
+      color: var(--soft);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .num {
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--surface-3);
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .warning {
+      border-color: rgba(239, 125, 115, 0.42);
+      background: rgba(44, 28, 29, 0.58);
+      color: #f0c6c2;
       font-size: 14px;
       line-height: 1.5;
     }
 
-    .note b {
-      color: var(--text);
+    .warning h2 {
+      color: #ffd4d0;
     }
 
-    .steps {
-      margin: 10px 0 0;
-      padding-left: 20px;
-    }
-
-    .steps li {
-      margin: 6px 0;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 24px;
-      padding: 3px 8px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
+    footer {
+      margin-top: 18px;
       color: var(--muted);
       font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 10px;
+      line-height: 1.45;
+      text-align: center;
     }
 
-    .js-off {
-      color: var(--accent);
-    }
-
-    .js-on {
-      color: var(--warn);
-    }
-
-    .danger {
-      color: var(--danger);
-    }
-
-    @media (min-width: 620px) {
-      main {
-        padding-top: 34px;
+    @media (max-width: 700px) {
+      .summary,
+      .grid {
+        grid-template-columns: 1fr;
       }
 
-      .actions {
-        grid-template-columns: 1fr 1fr;
+      .topbar {
+        align-items: flex-start;
+      }
+
+      .server {
+        margin-top: 4px;
       }
     }
   </style>
 </head>
 <body>
   <main>
-    <header>
-      <h1>UltimateMax Profile App</h1>
-      <p class="sub">Chon nhanh cau hinh iOS V8. Day la app dang web shortcut, khong can root, khong MDM, khong supervised.</p>
-    </header>
-
-    <section class="status" aria-label="Trang thai">
-      <div class="metric">
-        <b>Ban toi uu</b>
-        <span>V8 All-in-One, gom day du Restrictions, Energy Saver compatibility va DNS over HTTPS.</span>
+    <nav class="topbar" aria-label="Thanh trạng thái">
+      <div class="brand">
+        <div class="mark">V9</div>
+        <div>
+          <strong>UltimateMax</strong>
+          <span>Trình cài profile iOS</span>
+        </div>
       </div>
-      <div class="metric">
-        <b>Gioi han iOS</b>
-        <span>iPhone van se mo Settings de xac nhan cai profile. App khong the tu cai im lang.</span>
+      <div class="server"><span class="dot"></span>Server đang chạy</div>
+    </nav>
+
+    <section class="hero">
+      <h1>Cấu hình iOS tối ưu trong một app gọn gàng.</h1>
+      <p class="lead">Chọn nhanh bản V9 phù hợp: một bản ưu tiên mát máy và ổn định lâu, một bản bật JavaScript để dùng web đầy đủ hơn. iOS vẫn yêu cầu xác nhận cài đặt trong Settings.</p>
+    </section>
+
+    <section class="summary" aria-label="Thông tin nhanh">
+      <div>
+        <b>Phiên bản</b>
+        <span>UltimateMax V9 All-in-One NonMDM.</span>
+      </div>
+      <div>
+        <b>Payload</b>
+        <span>Restrictions, Energy Saver compatibility, DNS over HTTPS.</span>
+      </div>
+      <div>
+        <b>Thiết bị</b>
+        <span>iPhone thường, không MDM, không supervised.</span>
       </div>
     </section>
 
-    <section class="profile">
-      <span class="tag js-off">JS Off - mat hon</span>
-      <h2>UltimateMax V8 NonMDM</h2>
-      <p>Ban manh nhat de giam tai nen, giam nhiet gian tiep va toi uu cho phien choi lau. Safari JavaScript bi tat de giam CPU tren web nang.</p>
-      <div class="actions">
-        <a class="button primary" href="iOS-AllInOne-UltimateMax-V8-NonMDM.mobileconfig">Cai V8 JS Off</a>
-        <button type="button" data-copy="iOS-AllInOne-UltimateMax-V8-NonMDM.mobileconfig">Copy ten file</button>
-      </div>
+    <section class="grid" aria-label="Chọn cấu hình">
+      <article class="card">
+        <span class="badge cool">JS Off - Ưu tiên mát máy</span>
+        <h2>UltimateMax V9</h2>
+        <p>Bản tối ưu mạnh nhất cho phiên chơi dài. Safari JavaScript bị tắt để giảm tải CPU trên trang web nặng.</p>
+        <ul class="features">
+          <li><span class="check">✓</span><span>Giảm đồng bộ nền, Siri, AI, telemetry, vị trí, cảm biến chuyển động và dịch vụ không cần thiết.</span></li>
+          <li><span class="check">✓</span><span>Giữ DNS over HTTPS Cloudflare để truy vấn DNS ổn định hơn.</span></li>
+          <li><span class="check">✓</span><span>Thêm khóa giảm cập nhật nền, iCloud phụ, AirPlay, Apple Watch và bề mặt màn hình khóa.</span></li>
+        </ul>
+        <div class="actions">
+          <a class="button primary" href="iOS-AllInOne-UltimateMax-V9-NonMDM.mobileconfig">Cài V9 JS Off</a>
+          <button type="button" data-copy="iOS-AllInOne-UltimateMax-V9-NonMDM.mobileconfig">Sao chép tên file</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="badge compat">JS On - Web đầy đủ</span>
+        <h2>UltimateMax V9 JS-On</h2>
+        <p>Giữ phần tối ưu chính của V9 nhưng bật Safari JavaScript để website, đăng nhập và web app hoạt động đầy đủ hơn.</p>
+        <ul class="features">
+          <li><span class="check">✓</span><span>Tương thích tốt hơn với các website cần JavaScript.</span></li>
+          <li><span class="check">✓</span><span>Vẫn hạn chế nhiều tác vụ nền, đồng bộ, quảng cáo cá nhân hóa, telemetry, AirPlay và iCloud phụ.</span></li>
+          <li><span class="check">✓</span><span>Phù hợp khi cần duyệt web nhiều hơn là tối ưu nhiệt tuyệt đối.</span></li>
+        </ul>
+        <div class="actions">
+          <a class="button primary" href="iOS-AllInOne-UltimateMax-V9-JS-On-NonMDM.mobileconfig">Cài V9 JS On</a>
+          <button type="button" data-copy="iOS-AllInOne-UltimateMax-V9-JS-On-NonMDM.mobileconfig">Sao chép tên file</button>
+        </div>
+      </article>
     </section>
 
-    <section class="profile">
-      <span class="tag js-on">JS On - web day du</span>
-      <h2>UltimateMax V8 JS-On NonMDM</h2>
-      <p>Giu cac toi uu chinh cua V8 nhung bat Safari JavaScript de website hoat dong day du hon. Web nang co the ton pin va nong hon ban JS Off.</p>
-      <div class="actions">
-        <a class="button primary" href="iOS-AllInOne-UltimateMax-V8-JS-On-NonMDM.mobileconfig">Cai V8 JS On</a>
-        <button type="button" data-copy="iOS-AllInOne-UltimateMax-V8-JS-On-NonMDM.mobileconfig">Copy ten file</button>
-      </div>
-    </section>
-
-    <section class="note">
-      <b>Cach dung tren iPhone:</b>
+    <section class="guide">
+      <h2>Cách cài trên iPhone</h2>
       <ol class="steps">
-        <li>Mo trang nay bang Safari.</li>
-        <li>Chon mot ban V8 va cho phep tai profile.</li>
-        <li>Vao Settings, Profile Downloaded, Install.</li>
-        <li>Neu muon doi JS Off sang JS On, go profile cu roi cai ban moi.</li>
+        <li><span class="num">1</span><span>Mở trang này bằng Safari trên iPhone.</span></li>
+        <li><span class="num">2</span><span>Chọn bản V9 muốn dùng và cho phép tải profile.</span></li>
+        <li><span class="num">3</span><span>Vào Settings, chọn Profile Downloaded, rồi bấm Install.</span></li>
+        <li><span class="num">4</span><span>Muốn đổi giữa JS Off và JS On thì gỡ profile cũ trước, sau đó cài bản mới.</span></li>
       </ol>
     </section>
 
-    <section class="note">
-      <b class="danger">Luu y:</b> profile manh se khoa mot so tinh nang nhu cai/go app, iCloud sync, Siri, Game Center, quay man hinh va mot so dich vu nen cho den khi go profile.
+    <section class="warning">
+      <h2>Lưu ý quan trọng</h2>
+      Profile này rất mạnh. Một số tính năng như cài hoặc gỡ app, iCloud sync, Siri, Game Center, quay màn hình, Safari JavaScript ở bản JS Off và một số dịch vụ nền sẽ bị hạn chế cho đến khi bạn gỡ profile.
     </section>
+
+    <footer>
+      UltimateMax V9 không thể ép xung, tăng FPS trực tiếp, đổi tần số quét hay điều khiển phần cứng. Profile chỉ giảm tải gián tiếp qua các chính sách iOS cho phép.
+    </footer>
   </main>
 
   <script>
-    const buttons = document.querySelectorAll("[data-copy]");
-    buttons.forEach((button) => {
+    document.querySelectorAll("[data-copy]").forEach((button) => {
       button.addEventListener("click", async () => {
         const value = button.getAttribute("data-copy");
+        const label = button.textContent;
+
         try {
           await navigator.clipboard.writeText(value);
-          const old = button.textContent;
-          button.textContent = "Da copy";
+          button.textContent = "Đã sao chép";
           setTimeout(() => {
-            button.textContent = old;
+            button.textContent = label;
           }, 1200);
         } catch (error) {
           button.textContent = value;
