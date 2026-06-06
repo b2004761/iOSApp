@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101418">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="UltimateMax">
+  <title>UltimateMax Profile App</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101418;
+      --panel: #171d23;
+      --panel-2: #1e2630;
+      --text: #eef3f7;
+      --muted: #a9b4bf;
+      --line: #2d3742;
+      --accent: #54c7a0;
+      --warn: #f0b45b;
+      --danger: #ee7b72;
+      --button: #26323d;
+      --button-strong: #2c7d67;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0) 240px),
+        var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    main {
+      width: min(760px, 100%);
+      margin: 0 auto;
+      padding: 22px 16px 36px;
+    }
+
+    header {
+      padding: 12px 2px 20px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.08;
+      font-weight: 800;
+    }
+
+    .sub {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .status {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 8px 0 18px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 12px;
+      min-height: 72px;
+    }
+
+    .metric b {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .profile {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 14px;
+      margin: 12px 0;
+    }
+
+    .profile h2 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .profile p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    a.button,
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 46px;
+      padding: 12px 14px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      background: var(--button);
+      color: var(--text);
+      text-decoration: none;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    a.primary {
+      background: var(--button-strong);
+    }
+
+    .note {
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+      border-radius: 8px;
+      padding: 14px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .note b {
+      color: var(--text);
+    }
+
+    .steps {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    .steps li {
+      margin: 6px 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .js-off {
+      color: var(--accent);
+    }
+
+    .js-on {
+      color: var(--warn);
+    }
+
+    .danger {
+      color: var(--danger);
+    }
+
+    @media (min-width: 620px) {
+      main {
+        padding-top: 34px;
+      }
+
+      .actions {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>UltimateMax Profile App</h1>
+      <p class="sub">Chon nhanh cau hinh iOS V8. Day la app dang web shortcut, khong can root, khong MDM, khong supervised.</p>
+    </header>
+
+    <section class="status" aria-label="Trang thai">
+      <div class="metric">
+        <b>Ban toi uu</b>
+        <span>V8 All-in-One, gom day du Restrictions, Energy Saver compatibility va DNS over HTTPS.</span>
+      </div>
+      <div class="metric">
+        <b>Gioi han iOS</b>
+        <span>iPhone van se mo Settings de xac nhan cai profile. App khong the tu cai im lang.</span>
+      </div>
+    </section>
+
+    <section class="profile">
+      <span class="tag js-off">JS Off - mat hon</span>
+      <h2>UltimateMax V8 NonMDM</h2>
+      <p>Ban manh nhat de giam tai nen, giam nhiet gian tiep va toi uu cho phien choi lau. Safari JavaScript bi tat de giam CPU tren web nang.</p>
+      <div class="actions">
+        <a class="button primary" href="../iOS-AllInOne-UltimateMax-V8-NonMDM.mobileconfig">Cai V8 JS Off</a>
+        <button type="button" data-copy="../iOS-AllInOne-UltimateMax-V8-NonMDM.mobileconfig">Copy ten file</button>
+      </div>
+    </section>
+
+    <section class="profile">
+      <span class="tag js-on">JS On - web day du</span>
+      <h2>UltimateMax V8 JS-On NonMDM</h2>
+      <p>Giu cac toi uu chinh cua V8 nhung bat Safari JavaScript de website hoat dong day du hon. Web nang co the ton pin va nong hon ban JS Off.</p>
+      <div class="actions">
+        <a class="button primary" href="../iOS-AllInOne-UltimateMax-V8-JS-On-NonMDM.mobileconfig">Cai V8 JS On</a>
+        <button type="button" data-copy="../iOS-AllInOne-UltimateMax-V8-JS-On-NonMDM.mobileconfig">Copy ten file</button>
+      </div>
+    </section>
+
+    <section class="note">
+      <b>Cach dung tren iPhone:</b>
+      <ol class="steps">
+        <li>Mo trang nay bang Safari.</li>
+        <li>Chon mot ban V8 va cho phep tai profile.</li>
+        <li>Vao Settings, Profile Downloaded, Install.</li>
+        <li>Neu muon doi JS Off sang JS On, go profile cu roi cai ban moi.</li>
+      </ol>
+    </section>
+
+    <section class="note">
+      <b class="danger">Luu y:</b> profile manh se khoa mot so tinh nang nhu cai/go app, iCloud sync, Siri, Game Center, quay man hinh va mot so dich vu nen cho den khi go profile.
+    </section>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll("[data-copy]");
+    buttons.forEach((button) => {
+      button.addEventListener("click", async () => {
+        const value = button.getAttribute("data-copy");
+        try {
+          await navigator.clipboard.writeText(value);
+          const old = button.textContent;
+          button.textContent = "Da copy";
+          setTimeout(() => {
+            button.textContent = old;
+          }, 1200);
+        } catch (error) {
+          button.textContent = value;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
