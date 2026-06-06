@@ -14,7 +14,6 @@
       color-scheme: dark;
       --bg: #0f1419;
       --surface: #151b21;
-      --surface-2: #1c242c;
       --surface-3: #222c35;
       --text: #f3f7fa;
       --muted: #aab6c1;
@@ -28,9 +27,7 @@
       --shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -113,9 +110,7 @@
       box-shadow: 0 0 0 4px rgba(79, 195, 154, 0.14);
     }
 
-    .hero {
-      padding: 20px 0 18px;
-    }
+    .hero { padding: 20px 0 18px; }
 
     h1 {
       margin: 0;
@@ -197,13 +192,8 @@
       margin-bottom: 12px;
     }
 
-    .cool {
-      color: var(--green);
-    }
-
-    .compat {
-      color: var(--amber);
-    }
+    .cool { color: var(--green); }
+    .compat { color: var(--amber); }
 
     h2 {
       margin: 0 0 8px;
@@ -279,11 +269,6 @@
       background: var(--green-2);
     }
 
-    button:active,
-    a.button:active {
-      transform: translateY(1px);
-    }
-
     .guide,
     .warning {
       padding: 16px;
@@ -335,9 +320,7 @@
       line-height: 1.5;
     }
 
-    .warning h2 {
-      color: #ffd4d0;
-    }
+    .warning h2 { color: #ffd4d0; }
 
     footer {
       margin-top: 18px;
@@ -353,13 +336,8 @@
         grid-template-columns: 1fr;
       }
 
-      .topbar {
-        align-items: flex-start;
-      }
-
-      .server {
-        margin-top: 4px;
-      }
+      .topbar { align-items: flex-start; }
+      .server { margin-top: 4px; }
     }
   </style>
 </head>
@@ -408,6 +386,7 @@
         </ul>
         <div class="actions">
           <a class="button primary" href="iOS-AllInOne-UltimateMax-V9-NonMDM.mobileconfig">Cài V9 JS Off</a>
+          <a class="button" href="iOS-AllInOne-UltimateMax-V9-NonMDM.mobileconfig" download>Tải file JS Off</a>
           <button type="button" data-copy="iOS-AllInOne-UltimateMax-V9-NonMDM.mobileconfig">Sao chép tên file</button>
         </div>
       </article>
@@ -423,6 +402,7 @@
         </ul>
         <div class="actions">
           <a class="button primary" href="iOS-AllInOne-UltimateMax-V9-JS-On-NonMDM.mobileconfig">Cài V9 JS On</a>
+          <a class="button" href="iOS-AllInOne-UltimateMax-V9-JS-On-NonMDM.mobileconfig" download>Tải file JS On</a>
           <button type="button" data-copy="iOS-AllInOne-UltimateMax-V9-JS-On-NonMDM.mobileconfig">Sao chép tên file</button>
         </div>
       </article>
@@ -434,13 +414,14 @@
         <li><span class="num">1</span><span>Mở trang này bằng Safari trên iPhone.</span></li>
         <li><span class="num">2</span><span>Chọn bản V9 muốn dùng và cho phép tải profile.</span></li>
         <li><span class="num">3</span><span>Vào Settings, chọn Profile Downloaded, rồi bấm Install.</span></li>
-        <li><span class="num">4</span><span>Muốn đổi giữa JS Off và JS On thì gỡ profile cũ trước, sau đó cài bản mới.</span></li>
+        <li><span class="num">4</span><span>Nếu chỉ muốn lưu file về máy, dùng nút Tải file trong từng thẻ cấu hình.</span></li>
+        <li><span class="num">5</span><span>Muốn đổi giữa JS Off và JS On thì gỡ profile cũ trước, sau đó cài bản mới.</span></li>
       </ol>
     </section>
 
     <section class="warning">
       <h2>Lưu ý quan trọng</h2>
-      Profile này rất mạnh. Một số tính năng như cài hoặc gỡ app, iCloud sync, Siri, Game Center, quay màn hình, Safari JavaScript ở bản JS Off và một số dịch vụ nền sẽ bị hạn chế cho đến khi bạn gỡ profile.
+      Profile này rất mạnh. Một số tính năng như cài hoặc gỡ app, iCloud sync, Siri, Game Center, quay màn hình, Safari JavaScript ở bản JS Off, vị trí, AirPlay, Apple Watch và một số dịch vụ nền sẽ bị hạn chế cho đến khi bạn gỡ profile.
     </section>
 
     <footer>
